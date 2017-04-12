@@ -160,6 +160,7 @@ Running `npm run component -- --name footer --parent ../common` creates a `foote
 
 Because the argument to `--name` applies to the folder name **and** the actual component name, make sure to camelcase the component names.
 > you can do same command for `filter` & `directive` & `factory` & `service`
+
 for example `npm run factory -- --name user`
 # Starter Kit Support and Questions
 > Contact us, anytime, regarding anything about this project.
