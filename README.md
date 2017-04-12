@@ -1,10 +1,3 @@
-<p align="center">
-  <a href="http://courses.angularclass.com/courses/angular-2-fundamentals" target="_blank">
-    <img width="438" alt="Angular 2 Fundamentals" src="https://cloud.githubusercontent.com/assets/1016365/17200649/085798c6-543c-11e6-8ad0-2484f0641624.png">
-  </a>
-</p>
-
----
 
 <p align="center">
   <a href="https://angularclass.com" target="_blank">
@@ -26,8 +19,6 @@ This repo serves as a minimal starter for those looking to get up-and-running wi
 * [SASS](http://sass-lang.com/) support via node-sass
 
 **Check out the [JSPM version](https://github.com/angularclass/NG6-starter/tree/jspm)--an alternative to Webpack as an ES6 build system.**
-
-> If you're looking for a preliminary [Angular 2](https://angular.io/) build, please use the [angular2-webpack-starter](https://github.com/angularclass/angular2-webpack-starter).
 ___
 
 # Table of Contents
@@ -41,7 +32,7 @@ ___
     * [Running the App](#running-the-app)
         * [Gulp Tasks](#gulp-tasks)
         * [Testing](#testing)
-		* [Generating Components](#generating-components)		
+		* [Generating Tools](#generating-tools)		
 * [Starter Kit Support and Questions](#starter-kit-support-and-questions)
 
 # Walkthrough
@@ -63,7 +54,6 @@ NG6 uses NPM scripts, Gulp, and Webpack together for its build system. Yes, you 
 * Starting a development server (yes, Webpack can do this too)
 * Generating boilerplate for the Angular app
 
-**Check out the [JSPM version](https://github.com/angularclass/NG6-starter/tree/jspm)--an alternative to Webpack as an ES6 build system.**
 
 ## File Structure
 We use a componentized approach with NG6. This will be the eventual standard (and particularly helpful, if using 
@@ -78,16 +68,22 @@ client
 ⋅⋅app/
 ⋅⋅⋅⋅app.js * app entry file
 ⋅⋅⋅⋅app.html * app template
-⋅⋅⋅⋅common/ * functionality pertinent to several components propagate into this directory
+⋅⋅⋅⋅commons/ * functionality pertinent to several components propagate into this directory
+⋅⋅⋅⋅⋅⋅commons.js * components entry file
+⋅⋅⋅⋅⋅⋅commons.scss * components entry style
+⋅⋅⋅⋅config/ * where config live
+⋅⋅⋅⋅⋅⋅config.js * config entry files
 ⋅⋅⋅⋅components/ * where components live
-⋅⋅⋅⋅⋅⋅components.js * components entry file
-⋅⋅⋅⋅⋅⋅home/ * home component
-⋅⋅⋅⋅⋅⋅⋅⋅home.js * home entry file (routes, configurations, and declarations occur here)
-⋅⋅⋅⋅⋅⋅⋅⋅home.component.js * home "directive"
-⋅⋅⋅⋅⋅⋅⋅⋅home.controller.js * home controller
-⋅⋅⋅⋅⋅⋅⋅⋅home.scss * home styles
-⋅⋅⋅⋅⋅⋅⋅⋅home.html * home template
-⋅⋅⋅⋅⋅⋅⋅⋅home.spec.js * home specs (for entry, component, and controller)
+⋅⋅⋅⋅⋅⋅components.js * components entry files
+⋅⋅⋅⋅⋅⋅components.scss * components entry styles
+⋅⋅⋅⋅filters/ * where filters live
+⋅⋅⋅⋅⋅⋅filters.js * filters entry file
+⋅⋅⋅⋅factories/ * where factories live
+⋅⋅⋅⋅⋅⋅factories.js * factories entry file
+⋅⋅⋅⋅services/ * where services live
+⋅⋅⋅⋅⋅⋅services.js * services entry file
+⋅⋅⋅⋅directives/ * where directives live
+⋅⋅⋅⋅⋅⋅directives.js * directives entry file
 ```
 
 ## Testing Setup
@@ -139,7 +135,7 @@ It's always easier to learn something if you have an examples. Here is a list of
 
  - [TodoMVC Example App](https://github.com/AngularClass/NG6-todomvc-starter)
 
-### Generating Components
+### Generating Tools
 Following a consistent directory structure between components offers us the certainty of predictability. We can take advantage of this certainty by creating a gulp task to automate the "instantiation" of our components. The component boilerplate task generates this:
 ```
 ⋅⋅⋅⋅⋅⋅componentName/
@@ -163,7 +159,8 @@ For example, running `npm run component -- --name signup --parent auth` will cre
 Running `npm run component -- --name footer --parent ../common` creates a `footer` component at `client/app/common/footer`.  
 
 Because the argument to `--name` applies to the folder name **and** the actual component name, make sure to camelcase the component names.
-
+> you can do same command for `filter` & `directive` & `factory` & `service`
+for example `npm run factory -- --name user`
 # Starter Kit Support and Questions
 > Contact us, anytime, regarding anything about this project.
 
